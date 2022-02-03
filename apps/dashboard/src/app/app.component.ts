@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '@ng-mfe/shared/data-access-user';
-import { distinctUntilChanged } from 'rxjs';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'ng-mfe-root',
@@ -15,13 +15,12 @@ export class AppComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    this.isLoggedIn$
-      .pipe(distinctUntilChanged())
-      .subscribe(async (loggedIn) => {
-        if (!loggedIn) {
-          this.router.navigateByUrl('login');
-        } else {
-          this.router.navigateByUrl('home');
+    this.userService
+      .checkIsLoggedIn()
+      .pipe(take(1))
+      .subscribe((isLoggedIn: boolean) => {
+        if (!isLoggedIn) {
+          this.router.navigate(['/login']);
         }
       });
   }

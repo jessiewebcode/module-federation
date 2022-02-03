@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserDropdownComponent } from './user-dropdown/user-dropdown.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoggedInGuard } from './logged-in.guard';
 
 @NgModule({
   declarations: [
@@ -29,11 +30,13 @@ import { HttpClientModule } from '@angular/common/http';
           path: 'home',
           loadChildren: () =>
             import('./home/home.module').then((m) => m.HomeModule),
+          canActivate: [LoggedInGuard],
         },
         {
           path: 'products',
           loadChildren: () =>
             import('products/Module').then((m) => m.RemoteEntryModule),
+          canActivate: [LoggedInGuard],
         },
       ],
       { initialNavigation: 'enabledBlocking' }
