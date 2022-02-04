@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+//
 @Component({
   selector: 'ng-mfe-test-entry',
   template: `<div class="remote-entry">
