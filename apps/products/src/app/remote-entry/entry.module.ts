@@ -8,7 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @NgModule({
-  declarations: [RemoteEntryComponent, ProductsComponent, ProductDetailComponent],
+  declarations: [
+    RemoteEntryComponent,
+    ProductsComponent,
+    ProductDetailComponent,
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -20,6 +24,11 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
       {
         path: 'detail/:id',
         component: ProductDetailComponent,
+      },
+      {
+        path: 'test',
+        loadChildren: () =>
+          import('test/Module').then((m) => m.RemoteEntryModule),
       },
     ]),
   ],
