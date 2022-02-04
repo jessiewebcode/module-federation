@@ -7,6 +7,8 @@
     "login-e2e": "apps/login-e2e",
     "products": "apps/products",
     "products-e2e": "apps/products-e2e",
-    "shared-data-access-user": "libs/shared/data-access-user"
+    "shared-data-access-user": "libs/shared/data-access-user",
+    "test": "apps/test",
+    "test-e2e": "apps/test-e2e"
   }
 }

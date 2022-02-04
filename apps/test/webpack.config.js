@@ -22,14 +22,13 @@ sharedMappings.register(
   tsConfigPath,
   [
     /* mapped paths to share */
-    '@ng-mfe/shared/data-access-user',
   ],
   workspaceRootPath
 );
 
 module.exports = {
   output: {
-    uniqueName: 'products',
+    uniqueName: 'test',
     publicPath: 'auto',
   },
   optimization: {
@@ -45,13 +44,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'products',
+      name: 'test',
       filename: 'remoteEntry.js',
       exposes: {
-        './Module': 'apps/products/src/app/remote-entry/entry.module.ts',
-      },
-      remotes: {
-        test: 'http://localhost:4203/remoteEntry.js',
+        './Module': 'apps/test/src/app/remote-entry/entry.module.ts',
       },
       shared: share({
         '@angular/core': {
