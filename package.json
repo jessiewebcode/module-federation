@@ -22,6 +22,7 @@
     "@fortawesome/angular-fontawesome": "^0.10.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@ngrx/store": "^13.0.2",
     "@popperjs/core": "^2.11.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",

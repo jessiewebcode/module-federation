@@ -23,5 +23,7 @@ export class AppComponent implements OnInit {
           this.router.navigate(['/login']);
         }
       });
+
+    this.userService.user$.subscribe((user) => console.log('dashboard', user));
   }
 }

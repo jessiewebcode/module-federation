@@ -65,7 +65,6 @@ import { take } from 'rxjs';
 export class RemoteEntryComponent implements OnInit {
   public username = '';
   public password = '';
-  public isEvent = false;
   public color = 'beige';
 
   public isLoggedIn$ = this.userService.isUserLoggedIn$;
@@ -83,13 +82,16 @@ export class RemoteEntryComponent implements OnInit {
           }
         },
       });
+    this.userService.user$.subscribe((user) => console.log('login', user));
   }
 
   public login() {
-    if (!this.isEvent) {
-      this.userService.checkCredentials(this.username, this.password);
-
-      return;
+    const isLoggedIn: boolean = this.userService.checkCredentials(
+      this.username,
+      this.password
+    );
+    if (isLoggedIn) {
+      this.router.navigate(['/home']);
     }
   }
 }

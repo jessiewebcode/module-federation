@@ -8,6 +8,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UserDropdownComponent } from './user-dropdown/user-dropdown.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoggedInGuard } from './logged-in.guard';
+import { SharedDataAccessUserModule } from '@ng-mfe/shared/data-access-user';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { LoggedInGuard } from './logged-in.guard';
   imports: [
     BrowserModule,
     HttpClientModule,
+    StoreModule.forRoot({}),
+    SharedDataAccessUserModule,
     RouterModule.forRoot(
       [
         {
@@ -38,6 +42,7 @@ import { LoggedInGuard } from './logged-in.guard';
             import('products/Module').then((m) => m.RemoteEntryModule),
           canActivate: [LoggedInGuard],
         },
+        { path: '', redirectTo: '/home', pathMatch: 'full' },
       ],
       { initialNavigation: 'enabledBlocking' }
     ),

@@ -74,6 +74,12 @@ module.exports = {
           requiredVersion: 'auto',
           includeSecondaries: true,
         },
+        '@ngrx/store': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: 'auto',
+          includeSecondaries: true,
+        },
         rxjs: {
           singleton: true,
           strictVersion: true,

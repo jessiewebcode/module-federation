@@ -4,12 +4,14 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { RemoteEntryComponent } from './entry.component';
+import { SharedDataAccessUserModule } from '@ng-mfe/shared/data-access-user';
 
 @NgModule({
   declarations: [RemoteEntryComponent],
   imports: [
     CommonModule,
     FormsModule,
+    SharedDataAccessUserModule,
     RouterModule.forChild([
       {
         path: '',
