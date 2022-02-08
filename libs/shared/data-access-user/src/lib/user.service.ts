@@ -48,6 +48,9 @@ export class UserService {
 
         if (results[0] === 'true' && !results[1]) {
           this.logUser(true);
+          this.store.dispatch(
+            RootActions.logIn({ user: { email: 'demo', password: 'demo' } })
+          );
         }
 
         return isLoggedIn;

@@ -18,7 +18,8 @@
     "paths": {
       "@ng-mfe/shared/data-access-user": [
         "libs/shared/data-access-user/src/index.ts"
-      ]
+      ],
+      "@ng-mfe/login": ["apps/login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

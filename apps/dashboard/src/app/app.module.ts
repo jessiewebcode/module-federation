@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoggedInGuard } from './logged-in.guard';
 import { SharedDataAccessUserModule } from '@ng-mfe/shared/data-access-user';
 import { StoreModule } from '@ngrx/store';
+import { RemoteEntryModule } from '@ng-mfe/login';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { StoreModule } from '@ngrx/store';
     HttpClientModule,
     StoreModule.forRoot({}),
     SharedDataAccessUserModule,
+    RemoteEntryModule,
     RouterModule.forRoot(
       [
         {

@@ -1,0 +1,3 @@
+<div class="user-container" *ngIf="(user$ | async).email">
+  You signed in as {{ (user$ | async).email }}
+</div>
